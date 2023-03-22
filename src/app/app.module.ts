@@ -9,20 +9,22 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WishFormComponent } from './wish-form/wish-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { WishListComponent } from './wish-list/wish-list.component';
 import { WishDetailComponent } from './wish-detail/wish-detail.component';
+import { WishItemComponent } from './wish-item/wish-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WishFormComponent,
-    WishListComponent,
     WishDetailComponent,
+    WishItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,9 @@ import { WishDetailComponent } from './wish-detail/wish-detail.component';
     MatDialogModule,
     MatIconModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatCheckboxModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

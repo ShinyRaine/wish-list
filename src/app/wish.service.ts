@@ -5,7 +5,7 @@ import { Wish } from './wish'
 @Injectable({
   providedIn: 'root'
 })
-export class WishServiceService {
+export class WishService {
 
   constructor() { }
   getList(): Observable<Wish[]> {

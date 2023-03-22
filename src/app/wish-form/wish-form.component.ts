@@ -1,8 +1,9 @@
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Wish, Step } from '../wish';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { WishServiceService } from '../wish-service.service';
+import { WishService } from '../wish.service';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-wish-form',
@@ -10,7 +11,10 @@ import { WishServiceService } from '../wish-service.service';
   styleUrls: ['./wish-form.component.scss']
 })
 export class WishFormComponent {
-  constructor(private wishService: WishServiceService) {}
+  constructor(
+    public dialogRef: MatDialogRef<WishFormComponent>,
+    private wishService: WishService
+  ) {}
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   model: Wish = {
     id: 0,
@@ -18,11 +22,9 @@ export class WishFormComponent {
     steps: []
   };
 
-  // submitted = false;
-
   onSubmit() { 
     this.wishService.addWish(this.model)
-    
+    this.dialogRef.close('submit')
   }
 
   add(event: MatChipInputEvent): void {

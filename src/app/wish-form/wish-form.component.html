@@ -1,5 +1,5 @@
+<h2 mat-dialog-title>tell me your wish</h2>
 <mat-dialog-content class="wish">
-<h2>tell me your wish</h2>
 <!-- {{ model | json }} -->
   <form class="wish-form" #wishForm="ngForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
@@ -40,7 +40,6 @@
     <button mat-flat-button (click)="wishForm.reset()">clear</button>
     <button
     mat-flat-button
-    mat-dialog-close
     color="primary"
     type="submit"
     [disabled]="!wishForm.form.valid"

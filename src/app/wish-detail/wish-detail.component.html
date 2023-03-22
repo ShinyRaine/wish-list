@@ -1,1 +1,6 @@
-<p>wish-detail works!</p>
+<mat-dialog-content class="detail">
+  <h2>{{data.name}}</h2>
+  <div *ngFor="let item of data.steps">
+    <mat-checkbox [(ngModel)]="item.achieved" (change)="handleChange()">{{item.name}}</mat-checkbox>
+  </div>
+</mat-dialog-content>

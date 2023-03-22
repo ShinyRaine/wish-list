@@ -1,4 +1,17 @@
-<!-- <app-wish-form></app-wish-form> -->
-<button class="add-button" mat-fab (click)="openDialog()" matTooltip="make a wish" color="primary">
+<ul class="list">
+  <li
+    *ngFor="let wish of list"
+    (click)="openDetail(wish)"
+  >
+  <app-wish-item [data]="wish"></app-wish-item>
+</li>
+</ul>
+<button
+  class="add-button"
+  mat-fab
+  (click)="openDialog()"
+  matTooltip="make a wish"
+  color="primary"
+>
   <mat-icon>add</mat-icon>
 </button>
