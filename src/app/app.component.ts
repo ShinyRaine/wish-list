@@ -27,7 +27,8 @@ export class AppComponent {
   }
   openDetail(wish: Wish) {
     const detailDialog = this.dialog.open(WishDetailComponent, {
-      data: wish
+      data: wish,
+      panelClass: 'detail-dialog'
     });
   }
   getList() {
